@@ -1,0 +1,128 @@
+:root {
+    --white: #ffffff;
+    --primaryColor: #051933;
+    --secundaryColor: #093366;
+    --primaryFontColor: #093366;
+    --secundaryFontColor: #ffffff;
+    --primaryGreyColor: #f0f0f0;
+    --secundaryGreyColor: #c7c7c7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--white);
+    font-family: 'Segoe UI';
+}
+
+#nav {
+    background-color: var(--primaryColor);
+    height: 110px;
+}
+
+#title-button {
+    position: absolute;
+    font-size: 32px;
+    color: var(--secundaryFontColor);
+    top: 30px;
+    left: 50px
+}
+
+.nav-buttons {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    top: 45px;
+    left: 140px;
+}
+
+.nav-button {
+    margin-left: 10px;
+    background: none;
+    border: none;
+}
+
+.nav-button a {
+    text-decoration: none;
+    color: var(--secundaryFontColor);
+    font-size: 16px;
+}
+
+.nav-button:hover a {
+    color: var(--secundaryGreyColor);
+}
+
+#sub-nav {
+    background-color: var(--secundaryColor);
+    height: 60px;
+    width: 100%;
+}
+
+.title {
+    color: var(--primaryFontColor);
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+#products {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 35px;
+}
+
+.product {
+    background-color: var(--primaryGreyColor);
+    height: 400px;
+    width: 325px;
+    margin: 15px 15px;
+    border-radius: 10px;
+}
+
+.product-title {
+    color: var(--primaryFontColor);
+    text-align: center;
+    margin-top: 10px;
+}
+
+.product img {
+    display: block;
+    border-radius: 20px;
+    height: 170px;
+    width: 250px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-price {
+    color: var(--primaryFontColor);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.product-button {
+    display: block;
+    cursor: pointer;
+    height: 40px;
+    width: 125px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--primaryColor);
+    color: var(--secundaryFontColor);
+    border: none;
+    border-radius: 20px;
+}
+
+.product-button a {
+    text-decoration: none;
+    color: var(--secundaryFontColor);
+}
+
+.product-button:hover {
+    background-color: var(--secundaryColor);
+    color: var(--secundaryFontColor);
+}
