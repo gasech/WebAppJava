@@ -9,7 +9,6 @@ public class Produto {
 
     public Produto(){
     }
-
     public Produto(int id, String nome, double preco, int quantidade, String url_imagem) {
         this.id = id;
         this.nome = nome;
@@ -17,7 +16,6 @@ public class Produto {
         this.quantidade = quantidade;
         this.url_imagem = url_imagem;
     }
-
 
     public int getId() {
         return this.id;

@@ -1,0 +1,265 @@
+:root {
+    --white: #ffffff;
+    --primaryColor: #051933;
+    --secundaryColor: #093366;
+    --primaryFontColor: #093366;
+    --secundaryFontColor: #ffffff;
+    --primaryGreyColor: #f0f0f0;
+    --secundaryGreyColor: #c7c7c7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--white);
+    font-family: 'Segoe UI';
+    background-color: var(--primaryGreyColor);
+}
+
+.content {
+  max-width: 1360px;
+  margin: auto;
+  background-color: var(--primaryGreyColor);
+}
+
+#nav {
+    background-color: var(--primaryColor);
+    height: 80px;
+    z-index: 1;
+}
+
+#back-nav {
+    background-color: var(--primaryColor);
+    height: 80px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+#sub-back-nav {
+    background-color: var(--secundaryColor);
+    height: 30px;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+#title-button {
+    position: absolute;
+    font-size: 32px;
+    color: var(--secundaryFontColor);
+    padding-top:30px;
+    padding-left: 50px
+}
+
+.nav-buttons {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding-top: 45px;
+    padding-left: 140px;
+}
+
+.nav-button {
+    position: relative;
+    margin-left: 10px;
+    background: none;
+    border: none;
+    z-index: 1;
+}
+
+.nav-button a {
+    text-decoration: none;
+    color: var(--secundaryFontColor);
+    font-size: 16px;
+}
+
+.nav-button:hover a {
+    color: var(--secundaryGreyColor);
+}
+
+#sub-nav {
+    background-color: var(--secundaryColor);
+    height: 30px;
+    width: 100%;
+    z-index: 1;
+}
+
+.title {
+    position: relative;
+    color: var(--secundaryFontColor);
+    padding-top: 2px;
+    padding-left: 50px;
+    z-index: 1;
+}
+
+#products {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+}
+
+.product {
+    background-color: white;
+    height: 325px;
+    width: 300px;
+    margin: 15px 15px;
+    border: none;
+    border-radius: 10px;
+}
+
+.product:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 30px -10px black;
+}
+
+.product:hover h3 {
+    text-decoration: underline;
+}
+
+.product-title {
+    color: var(--primaryFontColor);
+    text-align: center;
+    margin-top: 15px;
+    height: 50px;
+    width: 300px;
+}
+
+.product img {
+    display: block;
+    border-radius: 20px;
+    height: 170px;
+    width: 250px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-price {
+    color: var(--primaryFontColor);
+    text-align: center;
+    margin-top: 5px;
+}
+
+.product-button {
+    display: block;
+    cursor: pointer;
+    height: 40px;
+    width: 125px;
+    margin-top: 13px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--primaryColor);
+    color: var(--secundaryFontColor);
+    border: none;
+    border-radius: 20px;
+}
+
+.product-button:hover {
+    background-color: var(--secundaryColor);
+    color: var(--secundaryFontColor);
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.container {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    height: auto;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.align-items {
+    display: flex;
+    flex-direction: row;
+    padding-bottom:15px;
+}
+
+.big-image-product {
+    margin-top:25px;
+    height: 410px;
+    width: 50%;
+    border-radius:10px;
+}
+
+.inside-container {
+    text-align: center;
+    margin-left:25px;
+    margin-top:25px;
+    height: 410px;
+    width: 350px;
+    border: 1px solid var(--secundaryGreyColor);
+    border-radius: 10px;
+}
+
+.big-title-product {
+    font-size: 1.5rem;
+    color: var(--primaryFontColor);
+    padding-top:15px;
+}
+
+.big-price-product {
+    color: var(--primaryFontColor);
+    margin-top: 115px;
+}
+
+.big-button-product {
+    display: block;
+    cursor: pointer;
+    height: 40px;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    background-color: var(--primaryColor);
+    color: var(--secundaryFontColor);
+    border: none;
+    border-radius: 5px;
+}
+
+.big-button-product:hover {
+    background-color: var(--secundaryColor);
+    color: var(--secundaryFontColor);
+}
+
+.big-quantity-product { 
+
+}
+
+.id-product {
+}
+
+.center-item {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:90%;
+}
