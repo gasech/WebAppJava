@@ -4,12 +4,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    
+    <!-- Session Config -->
     <session-config>
         <session-timeout>
-            30
+            30  
         </session-timeout>
     </session-config>
     
+    <!-- Main Pages -->
+    
+    <!-- Home -->
     <servlet>
         <servlet-name>home</servlet-name>
         <jsp-file>/view/pages/index.jsp</jsp-file>
@@ -19,6 +24,7 @@
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
     
+    <!-- Products -->
     <servlet>
         <servlet-name>products</servlet-name>
         <jsp-file>/view/pages/products.jsp</jsp-file>
@@ -27,7 +33,10 @@
         <servlet-name>products</servlet-name>
         <url-pattern>/products</url-pattern>
     </servlet-mapping>
-  
+    
+    <!-- Servlets -->
+    
+    <!-- Show Product -->
     <servlet>
         <servlet-name>ShowProduct</servlet-name>
         <servlet-class>controller.ShowProduct</servlet-class>
@@ -37,24 +46,45 @@
         <url-pattern>/products/product</url-pattern>
     </servlet-mapping>
     
+    <!-- Buy Product -->
     <servlet>
         <servlet-name>BuyProduct</servlet-name>
         <servlet-class>controller.BuyProduct</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>BuyProduct</servlet-name>
-        <url-pattern>/products/product/buy</url-pattern>
+        <url-pattern>/products/product/checkout</url-pattern>
     </servlet-mapping>
     
+    <!-- Forward From Servlet -->
     <servlet>
         <servlet-name>x</servlet-name>
-        <jsp-file>/view/pages/buy_product.jsp</jsp-file>
+        <jsp-file>/view/pages/show_product.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>x</servlet-name>
         <url-pattern>/x</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>checkout</servlet-name>
+        <jsp-file>/view/pages/buy_product.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>checkout</servlet-name>
+        <url-pattern>/checkout</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>error</servlet-name>
+        <jsp-file>/view/pages/error.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>error</servlet-name>
+        <url-pattern>/error</url-pattern>
+    </servlet-mapping>
+    
+    <!-- JSP Page Encoding Configuration -->
     <jsp-config>
         <jsp-property-group>
             <url-pattern>*.jsp</url-pattern>

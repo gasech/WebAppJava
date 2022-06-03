@@ -13,9 +13,6 @@
             <jsp:include page='./view/components/header.jsp'>
                 <jsp:param name="title" value="${title}"/>
             </jsp:include>
-            <jsp:include page='./view/components/success.jsp'>
-                <jsp:param name="message" value="${msg}"/>
-            </jsp:include>
             <%
                 Produto produto = ProdutoDAO.getProduto(Integer.parseInt(request.getParameter("id")));
             %>

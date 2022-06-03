@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 import model.connection.ConnectionFactory;
 
 public class ProdutoDAO {
+
     public static List<Produto> getProdutos() {
         Connection con = ConnectionFactory.getConnection();
 
@@ -60,13 +61,40 @@ public class ProdutoDAO {
                 produto.setQuantidade(rs.getInt("quantidade"));
                 produto.setPreco(rs.getDouble("preco"));
                 produto.setUrl_imagem(rs.getString("url_imagem"));
+                return produto;
+            }
+
+            return produto;
+        } catch (SQLException ex) {
+            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+
+        return null;
+    }
+
+    public static boolean buyProduto(int id, int quantidade) {
+        Connection con = ConnectionFactory.getConnection();
+
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        Produto produto = getProduto(id);
+        try {
+            if (produto.getQuantidade() >= quantidade) {
+                stmt = con.prepareStatement("UPDATE produtos SET quantidade = quantidade -" + quantidade + " WHERE id = " + id);
+                stmt.executeUpdate();
+                return true;
+            } else {
+                return false;
             }
         } catch (SQLException ex) {
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             ConnectionFactory.closeConnection(con, stmt, rs);
         }
-        
-        return produto;
+
+        return false;
     }
 }

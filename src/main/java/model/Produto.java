@@ -7,7 +7,7 @@ public class Produto {
     private int quantidade;
     private String url_imagem;
 
-    public Produto(){
+    public Produto(){  
     }
     public Produto(int id, String nome, double preco, int quantidade, String url_imagem) {
         this.id = id;

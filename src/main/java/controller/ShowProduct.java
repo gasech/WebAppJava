@@ -29,11 +29,16 @@ public class ShowProduct extends HttpServlet {
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             Produto produto = ProdutoDAO.getProduto(Integer.parseInt(request.getParameter("id")));
+ 
+            if (produto.getNome() == null) {
+                String msg = "Produto não encontrado";
+                request.setAttribute("msg", msg);
+                request.getRequestDispatcher("/error").forward(request, response);
+            } else {
+                request.setAttribute("title", "Demo > Products > " + produto.getNome());
 
-            request.setAttribute("produto", produto);
-            request.setAttribute("title", "Demo > Products > " + produto.getNome());
-
-            request.getRequestDispatcher("/x").forward(request, response);
+                request.getRequestDispatcher("/x").forward(request, response);
+            }
         }
     }
 

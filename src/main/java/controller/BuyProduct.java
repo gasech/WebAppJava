@@ -4,7 +4,6 @@ package controller;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -32,7 +31,21 @@ public class BuyProduct extends HttpServlet {
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             Produto produto = ProdutoDAO.getProduto(Integer.parseInt(request.getParameter("id")));
-            System.out.println(produto.getNome());
+
+            String msg; 
+            if (ProdutoDAO.buyProduto((Integer.parseInt(request.getParameter("id"))), (Integer.parseInt(request.getParameter("quantidade"))))) {
+                produto.setQuantidade(produto.getQuantidade() - (Integer.parseInt(request.getParameter("quantidade"))));
+                msg = "Comprado com sucesso, nova quantidade em estoque: " + produto.getQuantidade();
+                request.setAttribute("msg", msg);
+                request.setAttribute("produto", produto);
+                request.setAttribute("title", "Demo > Products > " + produto.getNome());
+
+                request.getRequestDispatcher("/checkout").forward(request, response);
+            } else {
+                msg = "Quantidade fora de estoque";
+                request.setAttribute("msg", msg);
+                request.getRequestDispatcher("/error").forward(request, response);
+            }
         }
     }
 

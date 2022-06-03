@@ -20,9 +20,9 @@ body {
 }
 
 .content {
-  max-width: 1360px;
-  margin: auto;
-  background-color: var(--primaryGreyColor);
+    max-width: 1360px;
+    margin: auto;
+    background-color: var(--primaryGreyColor);
 }
 
 #nav {
@@ -117,7 +117,7 @@ body {
 
 .product:hover {
     cursor: pointer;
-    box-shadow: 0px 0px 30px -10px black;
+    box-shadow: 0px 0px 15px -10px black;
 }
 
 .product:hover h3 {
@@ -213,8 +213,8 @@ body {
 .inside-container {
     text-align: center;
     margin-left:25px;
-    margin-top:25px;
-    height: 410px;
+    margin-top:40px;
+    height: 300px;
     width: 350px;
     border: 1px solid var(--secundaryGreyColor);
     border-radius: 10px;
@@ -228,7 +228,7 @@ body {
 
 .big-price-product {
     color: var(--primaryFontColor);
-    margin-top: 115px;
+    margin-top: 80px;
 }
 
 .big-button-product {
@@ -250,7 +250,7 @@ body {
     color: var(--secundaryFontColor);
 }
 
-.big-quantity-product { 
+.big-quantity-product {
 
 }
 
@@ -262,4 +262,55 @@ body {
     margin-left: auto;
     margin-right: auto;
     width:90%;
+}
+
+.title-error {
+    margin-top: 200px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--primaryFontColor);
+    padding-top:15px;
+}
+
+.button-error {
+    display: block;
+    cursor: pointer;
+    height: 40px;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    background-color: var(--primaryColor);
+    color: var(--secundaryFontColor);
+    border: none;
+    border-radius: 5px;
+}
+
+.button-error:hover {
+    background-color: var(--secundaryColor);
+    color: var(--secundaryFontColor);
+}
+
+.button-error a{
+    color: white;
+    text-decoration: none;
+}
+
+#success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: green;
+    color: white;
+    height: 40px;
+    width: 90%;
+    border: none;
+    border-radius: 10px;
+}
+
+#success p {
+    margin:auto;
 }
